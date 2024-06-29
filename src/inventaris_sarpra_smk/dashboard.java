@@ -1,0 +1,574 @@
+package inventaris_sarpra_smk;
+
+import java.awt.Toolkit;
+
+import inventaris_sarpra_smk.account.pengguna;
+import inventaris_sarpra_smk.inventaris.inventaris;
+import inventaris_sarpra_smk.inventaris.jenis;
+import inventaris_sarpra_smk.inventaris.ruang;
+import inventaris_sarpra_smk.peminjaman.peminjaman;
+import inventaris_sarpra_smk.peminjaman.pengembalian;
+
+
+public class dashboard extends javax.swing.JFrame {
+
+    public dashboard() {
+        
+        initComponents();
+        setIconImage();
+        
+        String username = session.get_username();
+        welcome_title.setText("Selamat datang kembali, " + username);
+        
+        int level = session.get_level();
+        
+            if (level == 1) {
+                
+                btn_peminjaman.setEnabled(true);
+                btn_peminjaman.setVisible(true);
+                
+                btn_pengembalian.setEnabled(true);
+                btn_pengembalian.setVisible(true);
+                
+                btn_jenis.setEnabled(true);
+                btn_jenis.setVisible(true);
+                
+                btn_ruang.setEnabled(true);
+                btn_ruang.setVisible(true);
+                
+                btn_inventaris.setEnabled(true);
+                btn_inventaris.setVisible(true);
+
+                menu_peminjaman.setEnabled(true);
+                menu_peminjaman.setVisible(true);
+
+                menu_pengembalian.setEnabled(true);
+                menu_pengembalian.setVisible(true);
+
+                menu_pengguna.setEnabled(true);
+                menu_pengguna.setVisible(true);
+
+                menu_jenis.setEnabled(true);
+                menu_jenis.setVisible(true);
+
+                menu_ruang.setEnabled(true);
+                menu_ruang.setVisible(true);
+
+                menu_inventaris.setVisible(true);
+                menu_inventaris.setVisible(true);
+                
+            } else if (level == 2) {
+             
+                btn_peminjaman.setEnabled(true);
+                btn_peminjaman.setVisible(true);
+                
+                btn_pengembalian.setEnabled(true);
+                btn_pengembalian.setVisible(true);
+                
+                btn_jenis.setEnabled(false);
+                btn_jenis.setVisible(false);
+                
+                btn_ruang.setEnabled(false);
+                btn_ruang.setVisible(false);
+                
+                btn_inventaris.setEnabled(false);
+                btn_inventaris.setVisible(false);
+
+                menu_peminjaman.setEnabled(true);
+                menu_peminjaman.setVisible(true);
+
+                menu_pengembalian.setEnabled(true);
+                menu_pengembalian.setVisible(true);
+
+                menu_pengguna.setEnabled(false);
+                menu_pengguna.setVisible(false);
+
+                menu_jenis.setEnabled(false);
+                menu_jenis.setVisible(false);
+
+                menu_ruang.setEnabled(false);
+                menu_ruang.setVisible(false);
+
+                menu_inventaris.setVisible(false);
+                menu_inventaris.setVisible(false);
+
+                Inventarisir.setEnabled(false);
+                Inventarisir.setVisible(false);
+
+                jenis_sign.setVisible(false);
+                ruang_sign.setVisible(false);
+                inventaris_sign.setVisible(false);
+                
+            } else if (level == 3) {
+
+                btn_peminjaman.setEnabled(true);
+                btn_peminjaman.setVisible(true);
+                
+                btn_pengembalian.setEnabled(false);
+                btn_pengembalian.setVisible(false);
+                
+                btn_jenis.setEnabled(false);
+                btn_jenis.setVisible(false);
+                
+                btn_ruang.setEnabled(false);
+                btn_ruang.setVisible(false);
+                
+                btn_inventaris.setEnabled(false);
+                btn_inventaris.setVisible(false);
+
+                menu_peminjaman.setEnabled(true);
+                menu_peminjaman.setVisible(true);
+
+                menu_pengembalian.setEnabled(false);
+                menu_pengembalian.setVisible(false);
+
+                menu_pengguna.setEnabled(false);
+                menu_pengguna.setVisible(false);
+
+                menu_jenis.setEnabled(false);
+                menu_jenis.setVisible(false);
+
+                menu_ruang.setEnabled(false);
+                menu_ruang.setVisible(false);
+
+                menu_inventaris.setVisible(false);
+                menu_inventaris.setVisible(false);
+
+                Inventarisir.setEnabled(false);
+                Inventarisir.setVisible(false);
+
+                jenis_sign.setVisible(false);
+                ruang_sign.setVisible(false);
+                inventaris_sign.setVisible(false);
+                
+            }
+        
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("checked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        navbar = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        btn_peminjaman = new javax.swing.JButton();
+        btn_pengembalian = new javax.swing.JButton();
+        btn_jenis = new javax.swing.JButton();
+        btn_ruang = new javax.swing.JButton();
+        btn_inventaris = new javax.swing.JButton();
+        jenis_sign = new javax.swing.JLabel();
+        ruang_sign = new javax.swing.JLabel();
+        inventaris_sign = new javax.swing.JLabel();
+        content = new javax.swing.JPanel();
+        welcome_title = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        Account = new javax.swing.JMenu();
+        menu_pengguna = new javax.swing.JMenuItem();
+        menu_logout = new javax.swing.JMenuItem();
+        Inventarisir = new javax.swing.JMenu();
+        menu_jenis = new javax.swing.JMenuItem();
+        menu_ruang = new javax.swing.JMenuItem();
+        menu_inventaris = new javax.swing.JMenuItem();
+        Peminjaman = new javax.swing.JMenu();
+        menu_peminjaman = new javax.swing.JMenuItem();
+        menu_pengembalian = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Dashboard");
+
+        navbar.setBackground(new java.awt.Color(60, 60, 60));
+        navbar.setPreferredSize(new java.awt.Dimension(850, 120));
+
+        jPanel3.setBackground(new java.awt.Color(31, 40, 62));
+
+        btn_peminjaman.setBackground(new java.awt.Color(92, 184, 92));
+        btn_peminjaman.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hands.png"))); // NOI18N
+        btn_peminjaman.setBorderPainted(false);
+        btn_peminjaman.setFocusPainted(false);
+        btn_peminjaman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_peminjamanActionPerformed(evt);
+            }
+        });
+
+        btn_pengembalian.setBackground(new java.awt.Color(217, 83, 79));
+        btn_pengembalian.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/hands.png"))); // NOI18N
+        btn_pengembalian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pengembalianActionPerformed(evt);
+            }
+        });
+
+        btn_jenis.setBackground(new java.awt.Color(60, 60, 60));
+        btn_jenis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/boxes.png"))); // NOI18N
+        btn_jenis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_jenisActionPerformed(evt);
+            }
+        });
+
+        btn_ruang.setBackground(new java.awt.Color(60, 60, 60));
+        btn_ruang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/boxes.png"))); // NOI18N
+        btn_ruang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ruangActionPerformed(evt);
+            }
+        });
+
+        btn_inventaris.setBackground(new java.awt.Color(60, 60, 60));
+        btn_inventaris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/boxes.png"))); // NOI18N
+        btn_inventaris.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_inventarisActionPerformed(evt);
+            }
+        });
+
+        jenis_sign.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jenis_sign.setForeground(new java.awt.Color(255, 255, 255));
+        jenis_sign.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jenis_sign.setText("Jenis");
+
+        ruang_sign.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        ruang_sign.setForeground(new java.awt.Color(255, 255, 255));
+        ruang_sign.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ruang_sign.setText("Ruang");
+        ruang_sign.setPreferredSize(new java.awt.Dimension(38, 19));
+
+        inventaris_sign.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        inventaris_sign.setForeground(new java.awt.Color(255, 255, 255));
+        inventaris_sign.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        inventaris_sign.setText("Inventaris");
+        inventaris_sign.setPreferredSize(new java.awt.Dimension(38, 19));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_peminjaman)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_pengembalian, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jenis_sign, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_jenis, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_ruang, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ruang_sign, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_inventaris, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inventaris_sign, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_peminjaman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_pengembalian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btn_inventaris, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_ruang, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_jenis, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jenis_sign, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inventaris_sign, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ruang_sign, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout navbarLayout = new javax.swing.GroupLayout(navbar);
+        navbar.setLayout(navbarLayout);
+        navbarLayout.setHorizontalGroup(
+            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navbarLayout.createSequentialGroup()
+                .addContainerGap(338, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        navbarLayout.setVerticalGroup(
+            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(navbarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(navbar, java.awt.BorderLayout.PAGE_END);
+
+        content.setBackground(new java.awt.Color(31, 40, 62));
+
+        welcome_title.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        welcome_title.setForeground(new java.awt.Color(255, 255, 255));
+        welcome_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        welcome_title.setText("Selamat datang kembali, Nama");
+
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contentLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(welcome_title, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contentLayout.createSequentialGroup()
+                .addGap(164, 164, 164)
+                .addComponent(welcome_title)
+                .addContainerGap(211, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(content, java.awt.BorderLayout.CENTER);
+
+        jMenuBar1.setBackground(new java.awt.Color(60, 60, 60));
+
+        Account.setText("Account");
+
+        menu_pengguna.setText("pengguna");
+        menu_pengguna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_penggunaActionPerformed(evt);
+            }
+        });
+        Account.add(menu_pengguna);
+
+        menu_logout.setText("Logout");
+        menu_logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_logoutActionPerformed(evt);
+            }
+        });
+        Account.add(menu_logout);
+
+        jMenuBar1.add(Account);
+
+        Inventarisir.setText("Inventarisir");
+
+        menu_jenis.setText("Jenis");
+        menu_jenis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_jenisActionPerformed(evt);
+            }
+        });
+        Inventarisir.add(menu_jenis);
+
+        menu_ruang.setText("Ruang");
+        menu_ruang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_ruangActionPerformed(evt);
+            }
+        });
+        Inventarisir.add(menu_ruang);
+
+        menu_inventaris.setText("Inventaris");
+        menu_inventaris.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_inventarisActionPerformed(evt);
+            }
+        });
+        Inventarisir.add(menu_inventaris);
+
+        jMenuBar1.add(Inventarisir);
+
+        Peminjaman.setText("Peminjaman");
+
+        menu_peminjaman.setText("peminjaman");
+        menu_peminjaman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_peminjamanActionPerformed(evt);
+            }
+        });
+        Peminjaman.add(menu_peminjaman);
+
+        menu_pengembalian.setText("pengembalian");
+        menu_pengembalian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_pengembalianActionPerformed(evt);
+            }
+        });
+        Peminjaman.add(menu_pengembalian);
+
+        jMenuBar1.add(Peminjaman);
+
+        setJMenuBar(jMenuBar1);
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void menu_penggunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_penggunaActionPerformed
+        // TODO add your handling code here:
+
+        pengguna penggunaWindow = new pengguna(this, true);
+        penggunaWindow.setVisible(true);
+
+    }//GEN-LAST:event_menu_penggunaActionPerformed
+
+    private void menu_jenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_jenisActionPerformed
+        // TODO add your handling code here:
+
+        jenis jenisWindow = new jenis(this, true);
+        jenisWindow.setVisible(true);
+
+    }//GEN-LAST:event_menu_jenisActionPerformed
+
+    private void menu_ruangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_ruangActionPerformed
+        // TODO add your handling code here:
+
+        ruang ruangWindow = new ruang(this, true);
+        ruangWindow.setVisible(true);
+
+    }//GEN-LAST:event_menu_ruangActionPerformed
+
+    private void menu_inventarisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_inventarisActionPerformed
+        // TODO add your handling code here:
+
+        inventaris inventarisWindow = new inventaris(this, true);
+        inventarisWindow.setVisible(true);
+
+    }//GEN-LAST:event_menu_inventarisActionPerformed
+
+    private void menu_peminjamanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_peminjamanActionPerformed
+        // TODO add your handling code here:
+
+        peminjaman peminjamanWindow = new peminjaman(this, true);
+        peminjamanWindow.setVisible(true);
+
+    }//GEN-LAST:event_menu_peminjamanActionPerformed
+
+    private void menu_pengembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_pengembalianActionPerformed
+        // TODO add your handling code here:
+
+        pengembalian pengembalianWindow = new pengembalian(this, true);
+        pengembalianWindow.setVisible(true);
+
+    }//GEN-LAST:event_menu_pengembalianActionPerformed
+
+    private void btn_peminjamanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_peminjamanActionPerformed
+        // TODO add your handling code here:
+
+        peminjaman peminjamanWindow = new peminjaman(this, true);
+        peminjamanWindow.setVisible(true);
+
+    }//GEN-LAST:event_btn_peminjamanActionPerformed
+
+    private void btn_pengembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pengembalianActionPerformed
+        // TODO add your handling code here:
+
+        pengembalian pengembalianWindow = new pengembalian(this, true);
+        pengembalianWindow.setVisible(true);
+
+    }//GEN-LAST:event_btn_pengembalianActionPerformed
+
+    private void btn_jenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jenisActionPerformed
+        // TODO add your handling code here:
+
+        jenis jenisWindow = new jenis(this, true);
+        jenisWindow.setVisible(true);
+
+    }//GEN-LAST:event_btn_jenisActionPerformed
+
+    private void btn_ruangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ruangActionPerformed
+        // TODO add your handling code here:
+
+        ruang ruangWindow = new ruang(this, true);
+        ruangWindow.setVisible(true);
+
+    }//GEN-LAST:event_btn_ruangActionPerformed
+
+    private void btn_inventarisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inventarisActionPerformed
+        // TODO add your handling code here:
+
+        inventaris inventarisWindow = new inventaris(this, true);
+        inventarisWindow.setVisible(true);
+
+    }//GEN-LAST:event_btn_inventarisActionPerformed
+
+    private void menu_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_logoutActionPerformed
+        // TODO add your handling code here:
+
+        new login().setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_menu_logoutActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new dashboard().setVisible(true);
+            }
+        });
+    }
+    
+    void setIconImage() {
+
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icon/favicon.png")));
+
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Account;
+    private javax.swing.JMenu Inventarisir;
+    private javax.swing.JMenu Peminjaman;
+    private javax.swing.JButton btn_inventaris;
+    private javax.swing.JButton btn_jenis;
+    private javax.swing.JButton btn_peminjaman;
+    private javax.swing.JButton btn_pengembalian;
+    private javax.swing.JButton btn_ruang;
+    private javax.swing.JPanel content;
+    private javax.swing.JLabel inventaris_sign;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jenis_sign;
+    private javax.swing.JMenuItem menu_inventaris;
+    private javax.swing.JMenuItem menu_jenis;
+    private javax.swing.JMenuItem menu_logout;
+    private javax.swing.JMenuItem menu_peminjaman;
+    private javax.swing.JMenuItem menu_pengembalian;
+    private javax.swing.JMenuItem menu_pengguna;
+    private javax.swing.JMenuItem menu_ruang;
+    private javax.swing.JPanel navbar;
+    private javax.swing.JLabel ruang_sign;
+    private javax.swing.JLabel welcome_title;
+    // End of variables declaration//GEN-END:variables
+}
